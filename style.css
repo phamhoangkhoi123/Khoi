@@ -1,9 +1,7 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Arial', sans-serif; /* đổi font chữ */
+    background-color: #000000; /* đổi nền thành đen */
+    color: #ffffff; /* đổi chữ sang màu trắng */
 }
 
 header {
