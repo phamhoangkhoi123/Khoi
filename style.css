@@ -25,3 +25,51 @@ footer {
     background-color: #007BFF;
     color: white;
 	}
+	<section class="social">
+    <a href="https://www.facebook.com/share/1DMX9Pmej6/?mibextid=wwXIfr" target="_blank" class="facebook">
+        <i class="fab fa-facebook-f"></i> Facebook
+    </a>
+
+    <a href="https://zalo.me/0369274405" target="_blank" class="zalo">
+        💬 Zalo
+    </a>
+
+    <a href="https://www.tiktok.com/@tentiktok" target="_blank" class="tiktok">
+        <i class="fab fa-tiktok"></i> TikTok
+    </a>
+</section>
+.social{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin:40px 0;
+    flex-wrap:wrap;
+}
+
+.social a{
+    text-decoration:none;
+    color:#fff;
+    font-size:18px;
+    padding:15px 28px;
+    border-radius:50px;
+    transition:0.3s;
+    font-weight:bold;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+.facebook{
+    background:#1877F2;
+}
+
+.zalo{
+    background:#00AEEF;
+}
+
+.tiktok{
+    background:#000;
+}
+
+.social a:hover{
+    transform:translateY(-6px) scale(1.05);
+    box-shadow:0 15px 30px rgba(0,0,0,.35);
+}
