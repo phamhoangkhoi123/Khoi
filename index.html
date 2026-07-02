@@ -1,565 +1,200 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHK Premium Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            cursor: none;
+        }
 
-<meta charset="UTF-8">
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+        }
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(124, 92, 255, 0.5);
+            border-radius: 50%;
+            position: absolute;
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease, border-color 0.3s ease;
+        }
 
-<meta name="description"
-content="Trang cá nhân của PhamHoangKhoi">
+        .cursor-hover {
+            transform: translate(-50%, -50%) scale(1.5);
+            border-color: #7c5cff;
+        }
 
-<meta name="theme-color"
-content="#6C63FF">
+        .star {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: fall linear infinite;
+        }
 
-<title>PhamHoangKhoi</title>
+        @keyframes fall {
+            0% { transform: translateY(-20px); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
 
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
+        /* Hiệu ứng chuyển động tự nhiên cho khung chính */
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
 
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
+        .main-wrapper {
+            animation: floating 5s ease-in-out infinite;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
+        /* Hiệu ứng kính mờ (Glassmorphism) */
+        .container {
+            text-align: center;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+        }
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        /* Hiệu ứng gradient cho chữ */
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00f2fe, #7c5cff, #ff296a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+        }
 
-<link rel="stylesheet"
-href="style.css">
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
 
+        .grid-item {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(17, 17, 17, 0.8);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.4s, box-shadow 0.4s, color 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            font-size: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .grid-item:hover {
+            transform: translateY(-8px) scale(1.1);
+        }
+
+        .grid-item.tiktok:hover { color: #00f2fe; box-shadow: 0 0 20px #00f2fe; border-color: #00f2fe; }
+        .grid-item.facebook:hover { color: #1877f2; box-shadow: 0 0 20px #1877f2; border-color: #1877f2; }
+        .grid-item.zalo:hover { color: #0068ff; box-shadow: 0 0 20px #0068ff; border-color: #0068ff; }
+        .grid-item.telegram:hover { color: #229ed9; box-shadow: 0 0 20px #229ed9; border-color: #229ed9; }
+        .grid-item.instagram:hover { color: #e4405f; box-shadow: 0 0 20px #e4405f; border-color: #e4405f; }
+        .grid-item.tinder:hover { color: #ff296a; box-shadow: 0 0 20px #ff296a; border-color: #ff296a; }
+        .grid-item.gamepad:hover { color: #7c5cff; box-shadow: 0 0 20px #7c5cff; border-color: #7c5cff; }
+
+    </style>
 </head>
-
 <body>
 
-<!-- ===========================
-LOADING
-=========================== -->
-
-<div id="loader">
-
-<div class="loader-circle"></div>
-
-<h2>PHK</h2>
-
-<p>Loading...</p>
-
-</div>
-
-<!-- ===========================
-AURORA BACKGROUND
-=========================== -->
-
-<div class="aurora">
-
-<span></span>
-
-<span></span>
-
-<span></span>
-
-</div>
-
-<!-- ===========================
-HEADER
-=========================== -->
-
-<header id="header">
-
-<div class="logo">
-
-<i class="fa-solid fa-bolt"></i>
-
-<span>PHK</span>
-
-</div>
-
-<nav>
-
-<a href="#home">Home</a>
-
-<a href="#social">Social</a>
-
-<a href="#about">About</a>
-
-<a href="#contact">Contact</a>
-
-<button id="theme-toggle">
-
-<i class="fa-solid fa-moon"></i>
-
-</button>
-
-</nav>
-
-</header>
-
-<!-- ===========================
-HERO
-=========================== -->
-
-<section
-class="hero"
-id="home">
-
-<div class="hero-card">
-
-<div class="avatar-box">
-
-<div class="avatar-ring"></div>
-
-<img
-src="avatar.jpg"
-alt="PhamHoangKhoi"
-class="avatar">
-
-<div class="online">
-
-<span></span>
-
-Online
-
-</div>
-
-</div>
-
-<div class="hero-text">
-
-<h1>
-
-PhamHoangKhoi
-
-</h1>
-
-<h2 id="typing">
-
-Frontend Developer
-
-</h2>
-
-<p>
-
-Xin chào 👋
-
-Mình là Phạm Hoàng Khôi.
-
-Đây là website cá nhân nơi bạn có thể
-kết nối với mình qua các nền tảng mạng xã hội.
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="#social"
-class="primary-btn">
-
-<i class="fa-solid fa-paper-plane"></i>
-
-Khám phá
-
-</a>
-
-<a href="#contact"
-class="secondary-btn">
-
-<i class="fa-solid fa-envelope"></i>
-
-Liên hệ
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ===========================
-SCROLL INDICATOR
-=========================== -->
-
-<div class="scroll-down">
-
-<i class="fa-solid fa-angles-down"></i>
-
-</div>
-<!-- ===========================
-SOCIAL
-=========================== -->
-
-<section class="social-section" id="social">
-
-    <div class="section-title">
-
-        <span>MY SOCIAL</span>
-
-        <h2>Kết nối với mình</h2>
-
-        <p>
-            Chọn nền tảng bạn muốn liên hệ.
-        </p>
-
-    </div>
-
-    <div class="social-grid">
-
-        <!-- Facebook -->
-
-        <div class="social-card facebook">
-
-            <div class="social-icon">
-                <i class="fab fa-facebook-f"></i>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <div class="main-wrapper">
+        <div class="container">
+            <h1 class="title">Kết Nối</h1>
+            <div class="grid">
+                <div class="grid-item tiktok"><i class="fa-brands fa-tiktok"></i></div>
+                <div class="grid-item facebook"><i class="fa-brands fa-facebook"></i></div>
+                <div class="grid-item zalo"><i class="fa-solid fa-comments"></i></div>
+                <div class="grid-item telegram"><i class="fa-brands fa-telegram"></i></div>
+                <div class="grid-item instagram"><i class="fa-brands fa-instagram"></i></div>
+                <div class="grid-item tinder"><i class="fa-brands fa-tinder"></i></div>
+                <div class="grid-item gamepad"><i class="fa-solid fa-gamepad"></i></div>
+                <div class="grid-item gamepad"><i class="fa-solid fa-gamepad"></i></div>
             </div>
-
-            <div class="social-info">
-
-                <h3>Facebook</h3>
-
-                <p>Kết nối và theo dõi mình.</p>
-
-            </div>
-
-            <a href="https://www.facebook.com/share/17MNxAMrzt/?mibextid=wwXIfr"
-               target="_blank"
-               class="go-btn">
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </a>
-
         </div>
-
-        <!-- Zalo -->
-
-        <div class="social-card zalo">
-
-            <div class="social-icon">
-
-                <i class="fa-solid fa-comment"></i>
-
-            </div>
-
-            <div class="social-info">
-
-                <h3>Zalo</h3>
-
-                <p>Liên hệ nhanh nhất.</p>
-
-            </div>
-
-            <a href="https://zalo.me/0369274405"
-               target="_blank"
-               class="go-btn">
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </a>
-
-        </div>
-
-        <!-- Telegram -->
-
-        <div class="social-card telegram">
-
-            <div class="social-icon">
-
-                <i class="fab fa-telegram-plane"></i>
-
-            </div>
-
-            <div class="social-info">
-
-                <h3>Telegram</h3>
-
-                <p>Nhắn tin trực tiếp.</p>
-
-            </div>
-
-            <a href="https://t.me/phamhoangkhoi?zarsrc=1303&utm_source=zalo&utm_medium=zalo&utm_campaign=zalo&gidzl=4SF1Jmy7tpmKsyD81XlNFXxHpqyQ5O5eLT78Jqv5Xsu2ZybE61_NR0VSc4qV7OPe1TQI7c8gyYr320FQE0"
-               target="_blank"
-               class="go-btn">
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </a>
-
-        </div>
-
-        <!-- TikTok -->
-
-        <div class="social-card tiktok">
-
-            <div class="social-icon">
-
-                <i class="fab fa-tiktok"></i>
-
-            </div>
-
-            <div class="social-info">
-
-                <h3>TikTok</h3>
-
-                <p>Xem video mới nhất.</p>
-
-            </div>
-
-            <a href="https://www.tiktok.com/@khoitenten?_r=1&_t=ZS-97gSdq392eemibextid=wwXIfr"
-               target="_blank"
-               class="go-btn">
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </a>
-
-        </div>
-
-        <!-- Instagram -->
-
-        <div class="social-card instagram">
-
-            <div class="social-icon">
-
-                <i class="fab fa-instagram"></i>
-
-            </div>
-
-            <div class="social-info">
-
-                <h3>Instagram</h3>
-
-                <p>Ảnh và Story.</p>
-
-            </div>
-
-            <a href="https://www.instagram.com/_domoi14?igsh=bjkwOXBqc2lyb2Rq&utm_source=qr"
-               target="_blank"
-               class="go-btn">
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </a>
-
-        </div>
-
-        <!-- Threads -->
-
-        <div class="social-card threads">
-
-            <div class="social-icon">
-
-                <i class="fa-brands fa-threads"></i>
-
-            </div>
-
-            <div class="social-info">
-
-                <h3>Threads</h3>
-
-                <p>Theo dõi bài viết.</p>
-
-            </div>
-
-            <a href="https://www.threads.com/@_domoi14?igshid=NTc4MTIwNjQ2YQ=="
-               target="_blank"
-               class="go-btn">
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </a>
-
-        </div>
-
     </div>
 
-</section>
-
-<!-- ===========================
-STATS
-=========================== -->
-
-<section class="stats">
-
-    <div class="stat-box">
-
-        <h2>06</h2>
-
-        <span>Mạng xã hội</span>
-
-    </div>
-
-    <div class="stat-box">
-
-        <h2>24/7</h2>
-
-        <span>Online</span>
-
-    </div>
-
-    <div class="stat-box">
-
-        <h2>100%</h2>
-
-        <span>Phản hồi</span>
-
-    </div>
-
-</section>
-
-<!-- ===========================
-ABOUT
-=========================== -->
-
-<section class="about" id="about">
-
-    <div class="about-card">
-
-        <h2>Giới thiệu</h2>
-
-        <p>
-
-            Xin chào!
-            Mình là <strong>Phạm Hoàng Khôi</strong>.
-
-            Mình yêu thích công nghệ, thiết kế website và sáng tạo nội dung.
-            Website này được tạo để chia sẻ các nền tảng mạng xã hội cũng như giúp mọi người kết nối với mình nhanh hơn.
-
-        </p>
-
-    </div>
-
-</section>
-<!-- ===========================
-CONTACT
-=========================== -->
-
-<section class="contact" id="contact">
-
-    <div class="contact-card">
-
-        <span class="mini-title">
-            CONTACT
-        </span>
-
-        <h2>Liên hệ với mình</h2>
-
-        <p>
-            Nếu bạn cần hỗ trợ hoặc muốn hợp tác,
-            hãy liên hệ qua email hoặc các mạng xã hội bên trên.
-        </p>
-
-        <div class="contact-info">
-
-            <div class="contact-item">
-
-                <i class="fa-solid fa-envelope"></i>
-
-                <span>
-                    phamhoangkhoi1401@icloud.com
-                </span>
-
-            </div>
-
-            <div class="contact-item">
-
-                <i class="fa-solid fa-location-dot"></i>
-
-                <span>
-                    Việt Nam
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ===========================
-FOOTER
-=========================== -->
-
-<footer>
-
-    <div class="footer-logo">
-
-        <h2>PHK</h2>
-
-    </div>
-
-    <p>
-
-        © 2026 PhamHoangKhoi
-
-    </p>
-
-    <div class="footer-social">
-
-        <a href="https://www.facebook.com/share/17MNxAMrzt/?mibextid=wwXIfr" target="_blank">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-
-        <a href="https://zalo.me/0369274405" target="_blank">
-            <i class="fa-solid fa-comment"></i>
-        </a>
-
-        <a href="https://t.me/phamhoangkhoi?zarsrc=1303&utm_source=zalo&utm_medium=zalo&utm_campaign=zalo&gidzl=4SF1Jmy7tpmKsyD81XlNFXxHpqyQ5O5eLT78Jqv5Xsu2ZybE61_NR0VSc4qV7OPe1TQI7c8gyYr320FQE0" target="_blank">
-            <i class="fab fa-telegram-plane"></i>
-        </a>
-
-        <a href="https://www.instagram.com/_domoi14?igsh=bjkwOXBqc2lyb2Rq&utm_source=qr" target="_blank">
-            <i class="fab fa-instagram"></i>
-        </a>
-
-        <a href="https://www.threads.com/@_domoi14?igshid=NTc4MTIwNjQ2YQ==" target="_blank">
-            <i class="fa-brands fa-threads"></i>
-        </a>
-
-    </div>
-
-</footer>
-
-<!-- Scroll Progress -->
-
-<div id="progress-bar"></div>
-
-<!-- Back To Top -->
-
-<button id="backToTop">
-
-    <i class="fa-solid fa-chevron-up"></i>
-
-</button>
-
-<!-- Custom Cursor -->
-
-<div class="cursor-dot"></div>
-
-<div class="cursor-outline"></div>
-
-<!-- Floating Shapes -->
-
-<div class="shape shape1"></div>
-
-<div class="shape shape2"></div>
-
-<div class="shape shape3"></div>
-
-<!-- Scripts -->
-
-<script src="script.js"></script>
-
+    <script>
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            cursorOutline.style.left = `${posX}px`;
+            cursorOutline.style.top = `${posY}px`;
+        });
+
+        document.querySelectorAll('.grid-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                cursorOutline.classList.add('cursor-hover');
+            });
+            item.addEventListener('mouseleave', () => {
+                cursorOutline.classList.remove('cursor-hover');
+            });
+        });
+
+        function createStar() {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            document.body.appendChild(star);
+
+            const size = Math.random() * 3 + 1;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+
+            star.style.left = `${Math.random() * window.innerWidth}px`;
+            
+            const duration = Math.random() * 4000 + 3000;
+            star.style.animationDuration = `${duration}ms`;
+
+            setTimeout(() => {
+                star.remove();
+            }, duration);
+        }
+
+        setInterval(createStar, 300);
+    </script>
 </body>
-
 </html>
-<div id="loader"></div>
-<div id="progress-bar"></div>
-<button id="backToTop"></button>
-<div class="cursor-dot"></div>
-<div class="cursor-outline"></div>
