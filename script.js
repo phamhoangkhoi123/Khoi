@@ -64,7 +64,7 @@ themeBtn.innerHTML =
 
 else {
 
-localStorage.setItem("theme", "dark");
+localStorage.setItem("theme", "light");
 
 themeBtn.innerHTML =
 '<i class="fa-solid fa-moon"></i>';
