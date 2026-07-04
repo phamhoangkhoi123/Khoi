@@ -1,337 +1,205 @@
-/* ========================= */
-/* KhoinD VN */
-/* ========================= */
+/* = / 
+/ KhoinD VN / 
+/ = */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+*{ 
+margin:0; 
+padding:0; 
+box-sizing:border-box; 
 }
 
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f5f5f5;
-    color:#222;
-    transition:0.3s;
+body{ 
+font-family:Arial,Helvetica,sans-serif; 
+background:#f5f5f5; 
+color:#222; 
+transition:0.3s; 
 }
 
 /* Header */
 
-header{
-    background:#111;
-    color:#fff;
+header{ 
+background:#111; 
+color:#fff;
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+display:flex;
+justify-content:space-between;
+align-items:center;
 
-    padding:8px 30px;
+padding:8px 30px;
 
-    position:sticky;
-    top:0;
-    z-index:1000;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-.logo{
-    font-size:18px;
-    font-weight:bold;
+.logo{ 
+font-size:18px; 
+font-weight:bold; 
 }
 
 /* Thanh điều hướng */
 
-.navbar{
-    display:flex;
-    align-items:center;
-    gap:10px;
+.navbar{ 
+display:flex; 
+align-items:center; 
+gap:10px; 
 }
 
-.navbar a{
-    color:white;
-    text-decoration:none;
-    font-size:7px;
-    font-weight:bold;
-    transition:.3s;
+.navbar a{ 
+color:white; 
+text-decoration:none; 
+font-size:7px; 
+font-weight:bold; 
+transition:.3s; 
 }
 
-.navbar a:hover{
-    color:#6C63FF;
+.navbar a:hover{ 
+color:#6C63FF; 
 }
 
-.navbar a.active{
-    color:#6C63FF;
+.navbar a.active{ 
+color:#6C63FF; 
 }
 
 /* Nút Dark Mode */
 
 #theme-toggle{
 
-    width:20px;
-    height:20px;
+width:20px;
+height:20px;
 
-    border:none;
-    border-radius:50%;
+border:none;
+border-radius:50%;
 
-    cursor:pointer;
+cursor:pointer;
 
-    background:#f5f5f5;
-    color:white;
+background:#f5f5f5;
+color:white;
 
-    font-size:20px;
+font-size:20px;
 
-    transition:.3s;
+transition:.3s;
 }
 
 #theme-toggle:hover{
 
-    transform:scale(1.1);
-
+transform:scale(1.1);
 }
 
 /* Nội dung */
 
 .services{
 
-    max-width:1000px;
+max-width:1000px;
 
-    margin:50px auto;
+margin:50px auto;
 
-    padding:20px;
-
+padding:20px;
 }
 
 .services h2{
 
-    text-align:center;
+text-align:center;
 
-    margin-bottom:30px;
-
+margin-bottom:30px;
 }
 
-/* =========================
-   PREMIUM SERVICE CARD
-========================= */
+.service-item{ 
+background:white; 
+border-radius:18px; 
+padding:25px; 
+margin-bottom:25px; 
+box-shadow:0 10px 25px rgba(0,0,0,.1); 
+transition:.3s;
 
-.service-item{
-
-    position:relative;
-
-    overflow:hidden;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    min-height:220px;
-
-    margin-bottom:30px;
-    padding:35px 25px;
-
-    border-radius:28px;
-
-    background:rgba(255,255,255,.95);
-
-    border:1px solid rgba(255,255,255,.25);
-
-    box-shadow:
-    0 12px 35px rgba(0,0,0,.08);
-
-    transition:
-    transform .35s ease,
-    box-shadow .35s ease;
-}
-
-/* Hiệu ứng ánh sáng */
-
-.service-item::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:-60%;
-    left:-60%;
-
-    width:220%;
-    height:220%;
-
-    background:linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,.22),
-    transparent);
-
-    transform:rotate(25deg);
-
-    transition:.7s;
-
-}
-
-.service-item:hover::before{
-
-    left:100%;
-
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
 }
 
 .service-item:hover{
 
-    transform:translateY(-8px);
-
-    box-shadow:
-    0 20px 45px rgba(108,99,255,.25);
-
+transform:translateY(-5px);
 }
-
-/* Tiêu đề */
 
 .service-item h3{
 
-    font-size:30px;
-
-    font-weight:700;
-
-    margin-bottom:25px;
-
-    color:inherit;
-
+margin-bottom:10px;
 }
-
-/* Mô tả */
 
 .service-item p{
 
-    font-size:16px;
-
-    line-height:1.8;
-
-    opacity:.75;
-
-    margin-bottom:25px;
-
+line-height:28px;
 }
 
-/* Button */
+.service-item a{ 
+display:inline-flex; 
+align-items:center; 
+justify-content:center;
 
-.service-item a{
+width:120px;
+height:50px;
 
-    display:flex;
+margin-top:15px;
 
-    justify-content:center;
+background:#6C63FF;
+color:white;
+text-decoration:none;
 
-    align-items:center;
-
-    width:150px;
-
-    height:55px;
-
-    border-radius:16px;
-
-    text-decoration:none;
-
-    color:#fff;
-
-    font-weight:700;
-
-    font-size:18px;
-
-    background:linear-gradient(
-    135deg,
-    #6C63FF,
-    #8B5CF6);
-
-    box-shadow:
-    0 10px 25px rgba(108,99,255,.45);
-
-    transition:.3s;
-
+border-radius:12px;
 }
 
 .service-item a:hover{
 
-    transform:scale(1.06);
-
-    box-shadow:
-    0 18px 35px rgba(108,99,255,.6);
-
-}
-
-/* Dark Mode */
-
-.dark-mode .service-item{
-
-    background:#1b1b1b;
-
-    border:1px solid rgba(255,255,255,.06);
-
-    box-shadow:
-    0 15px 40px rgba(0,0,0,.45);
-
-}
-
-.dark-mode .service-item h3{
-
-    color:#fff;
-
-}
-
-.dark-mode .service-item p{
-
-    color:#bbb;
-
+opacity:.9;
 }
 
 /* Footer */
 
 footer{
 
-    background:#111;
+background:#111;
 
-    color:white;
+color:white;
 
-    text-align:center;
+text-align:center;
 
-    padding:20px;
+padding:20px;
 
-    margin-top:50px;
-
+margin-top:50px;
 }
 
 /* Dark Mode */
 
 .dark-mode{
 
-    background:#121212;
+background:#121212;
 
-    color:white;
-
+color:white;
 }
 
 .dark-mode header{
 
-    background:#000;
-
+background:#000;
 }
 
 .dark-mode footer{
 
-    background:#000;
-
+background:#000;
 }
 
 .dark-mode .service-item{
 
-    background:#1f1f1f;
+background:#1f1f1f;
 
-    color:white;
-
+color:white;
 }
 
 .dark-mode .service-item a{
 
-    background:#6C63FF;
-
+background:#6C63FF;
 }
 
 /* Điện thoại */
@@ -340,24 +208,21 @@ footer{
 
 header{
 
-    flex-direction:column;
+flex-direction:column;
 
-    gap:15px;
-
+gap:15px;
 }
 
 .navbar{
 
-    flex-wrap:wrap;
+flex-wrap:wrap;
 
-    justify-content:center;
-
+justify-content:center;
 }
 
 .logo{
 
-    font-size:22px;
-
+font-size:22px;
 }
 
 }
