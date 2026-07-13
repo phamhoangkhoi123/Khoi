@@ -2,85 +2,341 @@
 <html lang="vi">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Về chúng tôi</title>
 
-    <link rel="stylesheet" href="style.css?v=2">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
+    <meta name="description"
+          content="Giới thiệu về Hoàng Khôi">
+
+    <meta name="keywords"
+          content="HoangKhoi, About, Portfolio">
+
+    <meta name="author"
+          content="HoangKhoi">
+
+    <title>Giới thiệu | HoangKhoi</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon"
+          href="favicon.ico">
+
 </head>
 
 <body>
 
+<!-- =========================
+        LOADER
+========================== -->
+
+<div id="loader">
+
+    <div class="loader-circle"></div>
+
+</div>
+
+<!-- =========================
+        OVERLAY
+========================== -->
+
+<div class="overlay"></div>
+
+<!-- =========================
+        SIDEBAR
+========================== -->
+
+<aside class="sidebar">
+
+    <button class="sidebar-close">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+    <a href="index.html">
+
+        <i class="fa-solid fa-house"></i>
+
+        Trang chủ
+
+    </a>
+
+    <a href="about.html">
+
+        <i class="fa-solid fa-circle-info"></i>
+
+        Giới thiệu
+
+    </a>
+
+    <a href="contact.html">
+
+        <i class="fa-solid fa-envelope"></i>
+
+        Liên hệ
+
+    </a>
+
+</aside>
+
+<!-- =========================
+        HEADER
+========================== -->
+
 <header>
 
-    <h1 class="logo">Hoangkhoi</h1>
+    <button class="menu-btn">
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+    <h1 class="logo">
+
+        Hoang<span>Khoi</span>
+
+    </h1>
 
     <nav class="navbar">
 
         <a href="index.html">
-            <i class="fa-solid fa-house"></i>
+
             Trang chủ
+
         </a>
 
-        <a href="about.html" class="active">
-            <i class="fa-solid fa-circle-info"></i>
-            Về chúng tôi
+        <a class="active"
+           href="about.html">
+
+            Giới thiệu
+
         </a>
-        
+
         <a href="contact.html">
-    <i class="fa-solid fa-envelope"></i>
-    Liên hệ
-</a>
+
+            Liên hệ
+
+        </a>
 
         <button id="theme-toggle">
+
             🌙
+
         </button>
 
     </nav>
 
 </header>
 
+<!-- =========================
+        HERO
+========================== -->
 
-<section class="services">
+<section class="hero">
 
-    <h2>Về chúng tôi</h2>
+    <div class="hero-content fade-in">
 
-    <div class="service-item">
+        <h1>
 
-        <h3>Hoangkhoi</h3>
+            Về
+
+            <span>
+
+                Hoàng Khôi
+
+            </span>
+
+        </h1>
 
         <p>
-            Chào mừng bạn đến với website của Hoangkhoi:
+
+            Xin chào! Mình là Hoàng Khôi.
+            Mình yêu thích lập trình, thiết kế giao diện hiện đại
+            và luôn hướng đến trải nghiệm người dùng tốt nhất.
+
         </p>
 
-        <p>
-            Tôi là Hoàng Khôi, yêu thích lập trình và thiết kế giao diện, luôn hướng đến những sản phẩm tối giản, hiện đại và trải nghiệm người dùng tốt nhất.
-        </p>
+        <a href="#about"
 
-        <p>
-            Cảm ơn bạn đã ghé thăm ❤️
-        </p>
+           class="btn ripple">
+
+            <i class="fa-solid fa-user"></i>
+
+            Tìm hiểu thêm
+
+        </a>
 
     </div>
 
 </section>
 
+<!-- =========================
+        ABOUT
+========================== -->
+
+<section id="about"
+
+         class="section">
+
+<div class="container">
+
+<div class="section-title reveal">
+
+<h2>
+
+Giới thiệu
+
+</h2>
+
+<p>
+
+Một vài thông tin về bản thân.
+
+</p>
+
+</div>
+
+<div class="services">
+        <!-- Thông tin cá nhân -->
+
+        <div class="service-item reveal">
+
+            <h3>
+                👋 Xin chào
+            </h3>
+
+            <p>
+                Mình là <strong>Hoàng Khôi</strong>, yêu thích lập trình,
+                thiết kế giao diện hiện đại và phát triển các website
+                tối ưu cho cả máy tính lẫn điện thoại.
+            </p>
+
+            <p>
+                Mục tiêu của mình là tạo ra những sản phẩm đẹp,
+                tốc độ cao và mang lại trải nghiệm tốt nhất
+                cho người dùng.
+            </p>
+
+        </div>
+
+
+
+        <!-- Kỹ năng -->
+
+        <div class="service-item reveal">
+
+            <h3>
+                🚀 Kỹ năng
+            </h3>
+
+            <p>✔ HTML5</p>
+
+            <p>✔ CSS3</p>
+
+            <p>✔ JavaScript</p>
+
+            <p>✔ Responsive Design</p>
+
+            <p>✔ GitHub Pages</p>
+
+        </div>
+
+
+
+        <!-- Mục tiêu -->
+
+        <div class="service-item reveal">
+
+            <h3>
+                🎯 Mục tiêu
+            </h3>
+
+            <p>
+                Không ngừng học hỏi,
+                nâng cao kỹ năng lập trình
+                và xây dựng các website
+                hiện đại, nhanh và chuyên nghiệp.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Ảnh -->
+
+    <div class="image-card reveal">
+
+        <img src="images/121234.jpeg"
+
+             alt="Hoàng Khôi">
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==========================
+        FOOTER
+========================== -->
 
 <footer>
 
-    © 2026 Hoangkhoi. 
+    <h3>
+
+        HoangKhoi
+
+    </h3>
+
+    <p>
+
+        Front-End Developer
+
+    </p>
+
+    <br>
+
+    <p>
+
+        © 2026 HoangKhoi
+
+    </p>
 
 </footer>
 
-<script src="script.js?v=2"></script>
+
+
+<!-- ==========================
+        BACK TO TOP
+========================== -->
+
+<button class="back-top">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+
+<!-- ==========================
+        SCRIPT
+========================== -->
+
+<script src="script.js"></script>
 
 </body>
 
 </html>
-<a href="contact.html">
-    <i class="fa-solid fa-envelope"></i>
-    Liên hệ
-</a>

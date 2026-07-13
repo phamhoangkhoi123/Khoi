@@ -2,41 +2,149 @@
 <html lang="vi">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hoangkhoi</title>
 
-    <link rel="stylesheet" href="style.css?v=2">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
+    <meta name="description"
+          content="Website cá nhân của Hoàng Khôi">
+
+    <meta name="keywords"
+          content="Hoangkhoi, Portfolio, Website">
+
+    <meta name="author"
+          content="HoangKhoi">
+
+    <title>HoangKhoi | PHK Premium V3</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon"
+          href="favicon.ico">
+
 </head>
 
 <body>
 
+<!-- =========================
+        LOADER
+========================== -->
+
+<div id="loader">
+
+    <div class="loader-circle"></div>
+
+</div>
+
+
+
+<!-- =========================
+        OVERLAY
+========================== -->
+
+<div class="overlay"></div>
+
+
+
+<!-- =========================
+        SIDEBAR
+========================== -->
+
+<aside class="sidebar">
+
+    <button class="sidebar-close">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+    <a href="index.html">
+
+        <i class="fa-solid fa-house"></i>
+
+        Trang chủ
+
+    </a>
+
+    <a href="about.html">
+
+        <i class="fa-solid fa-circle-info"></i>
+
+        Giới thiệu
+
+    </a>
+
+    <a href="contact.html">
+
+        <i class="fa-solid fa-envelope"></i>
+
+        Liên hệ
+
+    </a>
+
+    <a href="#services">
+
+        <i class="fa-solid fa-layer-group"></i>
+
+        Dịch vụ
+
+    </a>
+
+</aside>
+
+
+
+<!-- =========================
+        HEADER
+========================== -->
+
 <header>
 
-    <h1 class="logo">Hoangkhoi</h1>
+    <button class="menu-btn">
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+    <h1 class="logo">
+
+        Hoang<span>Khoi</span>
+
+    </h1>
 
     <nav class="navbar">
 
-        <a href="index.html" class="active">
-            <i class="fa-solid fa-house"></i>
+        <a class="active"
+           href="index.html">
+
             Trang chủ
+
         </a>
 
         <a href="about.html">
-            <i class="fa-solid fa-circle-info"></i>
-            Về chúng tôi
+
+            Giới thiệu
+
         </a>
-        
+
         <a href="contact.html">
-    <i class="fa-solid fa-envelope"></i>
-    Liên hệ
-</a>
+
+            Liên hệ
+
+        </a>
 
         <button id="theme-toggle">
+
             🌙
+
         </button>
 
     </nav>
@@ -44,85 +152,48 @@
 </header>
 
 
-<section class="services">
 
-    <h2>Dịch vụ & Liên kết</h2>
+<!-- =========================
+        HERO
+========================== -->
 
-    <div class="service-item">
+<section class="hero">
 
-        <h3>test 1</h3>
+    <div class="hero-content fade-in">
 
-        <a href="https://example.com/service1" target="_blank">
-            Mở
-        </a>
+        <h1>
 
-    </div>
+            Xin chào 👋
 
-    <div class="service-item">
+            <br>
 
-        <h3>test 2</h3>
+            Tôi là
 
-        <a href="https://example.com/service2" target="_blank">
-            Mở
-        </a>
+            <span>
 
-    </div>
+                Hoàng Khôi
 
-    <div class="service-item">
+            </span>
 
-        <h3>test 3</h3>
+        </h1>
 
-        <a href="https://example.com/service2" target="_blank">
-            Mở
-        </a>
+        <p>
 
-    </div>
-    
-    <div class="service-item">
+            Chào mừng bạn đến với website cá nhân.
 
-        <h3>test 4</h3>
+            Đây là nơi mình chia sẻ các dự án,
 
-        <a href="https://example.com/service3" target="_blank">
-            Mở
-        </a>
+            dịch vụ và những gì đang thực hiện.
 
-    </div>
-        <div class="service-item">
+        </p>
 
-        <h3>test 5</h3>
+        <a href="#services"
+           class="btn ripple">
 
-        <a href="https://example.com/service1" target="_blank">
-            Mở
-        </a>
+            <i class="fa-solid fa-arrow-down"></i>
 
-    </div>
+            Khám phá
 
-    <div class="service-item">
-
-        <h3>test 6</h3>
-
-        <a href="https://example.com/service2" target="_blank">
-            Mở
-        </a>
-
-    </div>
-
-    <div class="service-item">
-
-        <h3>test 7</h3>
-
-        <a href="https://example.com/service2" target="_blank">
-            Mở
-        </a>
-
-    </div>
-    
-    <div class="service-item">
-
-        <h3>test 8</h3>
-
-        <a href="https://example.com/service3" target="_blank">
-            Mở
         </a>
 
     </div>
@@ -130,16 +201,218 @@
 </section>
 
 
+
+<!-- =========================
+        SERVICES
+========================== -->
+
+<section id="services"
+         class="section">
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <h2>
+
+                Dịch vụ & Liên kết
+
+            </h2>
+
+            <p>
+
+                Một số nội dung nổi bật trên website.
+
+            </p>
+
+        </div>
+
+        <div class="services">
+                    <!-- Card 1 -->
+            <div class="service-item reveal">
+
+                <h3>Test 1</h3>
+
+                <p>
+                    Mô tả dịch vụ hoặc liên kết của bạn.
+                </p>
+
+                <a href="https://example.com" target="_blank">
+                    Mở
+                </a>
+
+            </div>
+
+            <!-- Card 2 -->
+            <div class="service-item reveal">
+
+                <h3>Test 2</h3>
+
+                <p>
+                    Nội dung giới thiệu.
+                </p>
+
+                <a href="https://example.com" target="_blank">
+                    Mở
+                </a>
+
+            </div>
+
+            <!-- Card 3 -->
+            <div class="service-item reveal">
+
+                <h3>Test 3</h3>
+
+                <p>
+                    Nội dung giới thiệu.
+                </p>
+
+                <a href="https://example.com" target="_blank">
+                    Mở
+                </a>
+
+            </div>
+
+            <!-- Card 4 -->
+            <div class="service-item reveal">
+
+                <h3>Test 4</h3>
+
+                <p>
+                    Nội dung giới thiệu.
+                </p>
+
+                <a href="https://example.com" target="_blank">
+                    Mở
+                </a>
+
+            </div>
+
+            <!-- Card 5 -->
+            <div class="service-item reveal">
+
+                <h3>Test 5</h3>
+
+                <p>
+                    Nội dung giới thiệu.
+                </p>
+
+                <a href="https://example.com" target="_blank">
+                    Mở
+                </a>
+
+            </div>
+
+            <!-- Card 6 -->
+            <div class="service-item reveal">
+
+                <h3>Test 6</h3>
+
+                <p>
+                    Nội dung giới thiệu.
+                </p>
+
+                <a href="https://example.com" target="_blank">
+                    Mở
+                </a>
+
+            </div>
+
+            <!-- Card 7 -->
+            <div class="service-item reveal">
+
+                <h3>Test 7</h3>
+
+                <p>
+                    Nội dung giới thiệu.
+                </p>
+
+                <a href="https://example.com" target="_blank">
+                    Mở
+                </a>
+
+            </div>
+
+            <!-- Card 8 -->
+            <div class="service-item reveal">
+
+                <h3>Test 8</h3>
+
+                <p>
+                    Nội dung giới thiệu.
+                </p>
+
+                <a href="https://example.com" target="_blank">
+                    Mở
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- IMAGE -->
+
+        <div class="image-card reveal">
+
+            <img src="images/121234.jpeg"
+                 alt="HoangKhoi">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================
+        FOOTER
+========================== -->
+
 <footer>
 
-    © 2026 Hoangkhoi 0369274405
-    Liên hệ phamhoangkhoi1401@icoud.com
-    
+    <h3>
+
+        HoangKhoi
+
+    </h3>
+
+    <p>
+
+        Front-End Developer
+
+    </p>
+
+    <br>
+
+    <p>
+
+        © 2026 HoangKhoi
+
+    </p>
 
 </footer>
 
 
-<script src="script.js?v=2"></script>
+
+<!-- ==========================
+        BACK TO TOP
+========================== -->
+
+<button class="back-top">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+
+<!-- ==========================
+        SCRIPT
+========================== -->
+
+<script src="script.js"></script>
 
 </body>
 
