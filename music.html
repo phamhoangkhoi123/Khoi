@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PHK Music | Hoàng Khôi</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ===========================
+            LOADER
+=========================== -->
+
+<div id="loader">
+
+    <div class="loader-logo">
+
+        PHK Music
+
+    </div>
+
+</div>
+
+<!-- ===========================
+            OVERLAY
+=========================== -->
+
+<div class="overlay"></div>
+
+<!-- ===========================
+            SIDEBAR
+=========================== -->
+
+<aside class="sidebar">
+
+    <button class="sidebar-close">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+    <a href="index.html">
+
+        <i class="fa-solid fa-house"></i>
+
+        Trang chủ
+
+    </a>
+
+    <a href="about.html">
+
+        <i class="fa-solid fa-user"></i>
+
+        Giới thiệu
+
+    </a>
+
+    <a href="contact.html">
+
+        <i class="fa-solid fa-envelope"></i>
+
+        Liên hệ
+
+    </a>
+
+    <a href="music.html"
+       class="active">
+
+        <i class="fa-solid fa-music"></i>
+
+        PHK Music
+
+    </a>
+
+</aside>
+
+<!-- ===========================
+            HEADER
+=========================== -->
+
+<header>
+
+    <div class="container header-container">
+
+        <a href="index.html"
+           class="logo">
+
+            PHK<span>Music</span>
+
+        </a>
+
+        <nav class="navbar">
+
+            <a href="index.html">
+
+                Trang chủ
+
+            </a>
+
+            <a href="about.html">
+
+                Giới thiệu
+
+            </a>
+
+            <a href="contact.html">
+
+                Liên hệ
+
+            </a>
+
+            <a href="music.html"
+               class="active">
+
+                Music
+
+            </a>
+
+        </nav>
+
+        <div class="header-actions">
+
+            <button id="theme-toggle">
+
+                🌙
+
+            </button>
+
+            <button class="menu-btn">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- ===========================
+            HERO
+=========================== -->
+
+<section class="hero">
+
+    <div class="container hero-content reveal">
+
+        <h1>
+
+            <span>PHK Music</span>
+
+        </h1>
+
+        <p>
+
+            Kho nhạc cá nhân của Hoàng Khôi.
+
+            Nghe trực tuyến hoặc tải xuống miễn phí.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+        MUSIC LIBRARY
+=========================== -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <h2>
+
+                Thư viện nhạc
+
+            </h2>
+
+            <p>
+
+                Tìm kiếm và phát những bài hát yêu thích.
+
+            </p>
+
+        </div>
+
+        <!-- Search -->
+
+        <div class="music-search reveal">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+
+                type="text"
+
+                id="searchMusic"
+
+                placeholder="Tìm kiếm bài hát hoặc ca sĩ...">
+
+        </div>
+
+        <!-- Song List -->
+
+        <div class="music-list" id="musicList">
+</
+
+<!-- ===========================
+        MINI PLAYER
+=========================== -->
+
+<div class="mini-player">
+
+    <div class="mini-cover">
+
+        <img src="images/default-cover.jpg"
+             alt="Cover">
+
+    </div>
+
+    <div class="mini-info">
+
+        <h4>
+
+            Chưa phát bài hát
+
+        </h4>
+
+        <p>
+
+            PHK Music
+
+        </p>
+
+    </div>
+
+    <div class="mini-control">
+
+        <button>
+
+            <i class="fa-solid fa-backward-step"></i>
+
+        </button>
+
+        <button class="mini-play">
+
+            <i class="fa-solid fa-play"></i>
+
+        </button>
+
+        <button>
+
+            <i class="fa-solid fa-forward-step"></i>
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+        BACK TO TOP
+=========================== -->
+
+<button class="back-top">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<!-- ===========================
+            FOOTER
+=========================== -->
+
+<footer>
+
+    <div class="container">
+
+        <h3>
+
+            PHK Music
+
+        </h3>
+
+        <p>
+
+            © 2026 Hoàng Khôi
+
+        </p>
+
+    </div>
+
+</footer>
+
+<script src="songs.js"></script>
+<script src="player.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>
